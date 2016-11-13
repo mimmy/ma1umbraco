@@ -1,0 +1,14 @@
+{
+  "id": "f3e952bd-60ac-4c6f-9fe5-42710fe065d2",
+  "name": "commentz",
+  "form": "53ab2791-44ba-401f-b53e-fd5da42f96ee",
+  "active": true,
+  "workflowTypeId": "89fb1e31-9f36-4e08-9d1b-af1180d340db",
+  "executesOn": "Submitted",
+  "settings": {
+    "Fields": "{\"doctype\":\"master\",\"nameField\":\"b8948618-0f13-4d96-c2de-b65085c898cf\",\"properties\":[{\"id\":\"metaKeywords\",\"value\":\"MetaKeywords\",\"$$hashKey\":\"2TI\",\"field\":\"b8948618-0f13-4d96-c2de-b65085c898cf\"},{\"id\":\"metaDescription\",\"value\":\"MetaDescription\",\"$$hashKey\":\"2TJ\"}]}",
+    "Publish": "True",
+    "RootNode": "1102"
+  },
+  "sortOrder": 1
+}

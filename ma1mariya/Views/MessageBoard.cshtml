@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+	
+@{
+	Layout = "Master.cshtml";
+}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+@Umbraco.RenderMacro("FormsRenderForm", new {FormGuid="53ab2791-44ba-401f-b53e-fd5da42f96ee"})
+	<p>NO</p>
+	@{
+
+	var messageList = Umbraco.Content(1102);
+	
+	foreach(var msg in messageList.Children().OrderBy("CreateDate desc")) {
+		
+		<p><strong>[@msg.CreateDate] @msg.Name: </strong>@msg.Message</p>
+			
+	}
+	
+}
+</div>
+		</div>
+	</div>
+</div>
