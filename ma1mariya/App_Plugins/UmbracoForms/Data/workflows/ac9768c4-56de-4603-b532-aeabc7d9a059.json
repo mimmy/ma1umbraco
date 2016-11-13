@@ -1,0 +1,14 @@
+{
+  "id": "ac9768c4-56de-4603-b532-aeabc7d9a059",
+  "name": "commentzmessage",
+  "form": "53ab2791-44ba-401f-b53e-fd5da42f96ee",
+  "active": true,
+  "workflowTypeId": "89fb1e31-9f36-4e08-9d1b-af1180d340db",
+  "executesOn": "Submitted",
+  "settings": {
+    "Fields": "{\"doctype\":\"master\",\"nameField\":\"00f8255a-f9a2-4b72-98b5-5d142390fe83\",\"properties\":[{\"id\":\"metaKeywords\",\"value\":\"MetaKeywords\",\"$$hashKey\":\"0M4\"},{\"id\":\"metaDescription\",\"value\":\"MetaDescription\",\"$$hashKey\":\"0M5\"}]}",
+    "Publish": "True",
+    "RootNode": "1102"
+  },
+  "sortOrder": 2
+}

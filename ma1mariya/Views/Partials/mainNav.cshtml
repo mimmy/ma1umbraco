@@ -27,9 +27,10 @@
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Project Details<span class="caret"></span></a>
 		  <ul class="dropdown-menu">
-			  <li>lala</li>
-			@foreach(var project in @Umbraco.Content(1100).Children.Where("Status.Contains(\"23\")")) { 
+			@foreach(var project in @Umbraco.Content(1068).Children) { 
+				if(@project.Status == "Completed"){
 				<li><a href="@project.Url">@project.Name</a></li>
+				}
 			}
 		  </ul>
 		</li>

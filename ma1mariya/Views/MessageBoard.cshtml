@@ -12,9 +12,10 @@
 	@{
 
 	var messageList = Umbraco.Content(1102);
+		<!--<p>@messageList.Children()</p>-->
 	
 	foreach(var msg in messageList.Children().OrderBy("CreateDate desc")) {
-		
+		<p>@msg.Message</p>
 		<p><strong>[@msg.CreateDate] @msg.Name: </strong>@msg.Message</p>
 			
 	}

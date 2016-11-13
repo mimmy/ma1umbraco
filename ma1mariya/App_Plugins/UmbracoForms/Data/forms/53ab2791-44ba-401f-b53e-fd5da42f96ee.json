@@ -97,7 +97,8 @@
   "useClientDependency": false,
   "workflows": [
     "7c7b734c-1b08-450a-9ca4-f0318b1df005",
-    "f3e952bd-60ac-4c6f-9fe5-42710fe065d2"
+    "f3e952bd-60ac-4c6f-9fe5-42710fe065d2",
+    "ac9768c4-56de-4603-b532-aeabc7d9a059"
   ],
   "datasource": null,
   "submitLabel": "Submit",
