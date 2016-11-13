@@ -1,0 +1,19 @@
+umbraco login:
+
+mariya@abv.bg
+12345678
+
+
+members:
+
+active:
+
+
+martin
+12345678
+
+notmartin
+1234567
+
+
+https://github.com/mimmy/ma1umbraco

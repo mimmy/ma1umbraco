@@ -3,6 +3,36 @@
 @{
 	Layout = "Master.cshtml";
 }
-
+<div class="container">
 <h1>@Umbraco.Field("title")</h1>
 	<div>@Umbraco.Field("content")</div>
+	<div class="row">
+			<section class="page-section">
+				<header>
+					<h2>Recent Projects</h2>
+					<hr/>
+				</header>
+				@{
+	var projectSection = Umbraco.Content(1068);
+}
+	
+<div class="container">
+	<div class="row">	
+		@foreach(var project in projectSection.Children().OrderBy("CreateDate desc").Take(3)) {
+			<div class="col-sm-12 col-md-6 col-lg-4">
+				<article>
+					<header>
+						<h3>@project.Name</h3>
+						<p><strong>Date:</strong> @project.CreateDate</p>
+						<p><strong>Status:</strong> @project.Status</p>
+					</header>
+					<p>@project.description</p>
+					<a href="@project.Url" class="btn btn-primary">Read More</a>
+				</article>
+			</div>
+		}
+	</div>
+</div>
+			</section>	
+		</div>
+				</div>
