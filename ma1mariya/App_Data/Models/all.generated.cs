@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "503ad1e2fa0ae974")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9d6d22bec3808654")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -655,6 +655,138 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Comment</summary>
+	[PublishedContentModel("comment")]
+	public partial class Comment : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "comment";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Comment(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Comment, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Email
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return this.GetPropertyValue<string>("email"); }
+		}
+
+		///<summary>
+		/// Message
+		///</summary>
+		[ImplementPropertyType("message")]
+		public string Message
+		{
+			get { return this.GetPropertyValue<string>("message"); }
+		}
+
+		///<summary>
+		/// Name
+		///</summary>
+		[ImplementPropertyType("sender")]
+		public string Sender
+		{
+			get { return this.GetPropertyValue<string>("sender"); }
+		}
+
+		///<summary>
+		/// Subject
+		///</summary>
+		[ImplementPropertyType("subject")]
+		public string Subject
+		{
+			get { return this.GetPropertyValue<string>("subject"); }
+		}
+	}
+
+	/// <summary>MessageBoard</summary>
+	[PublishedContentModel("messageBoard")]
+	public partial class MessageBoard : Master
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "messageBoard";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public MessageBoard(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<MessageBoard, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>BoardMessage</summary>
+	[PublishedContentModel("boardMessage")]
+	public partial class BoardMessage : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "boardMessage";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public BoardMessage(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<BoardMessage, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Message
+		///</summary>
+		[ImplementPropertyType("message")]
+		public string Message
+		{
+			get { return this.GetPropertyValue<string>("message"); }
+		}
+
+		///<summary>
+		/// Sender
+		///</summary>
+		[ImplementPropertyType("sender")]
+		public string Sender
+		{
+			get { return this.GetPropertyValue<string>("sender"); }
 		}
 	}
 

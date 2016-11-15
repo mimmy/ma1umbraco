@@ -15,6 +15,22 @@ namespace ma1mariya.Controllers
         {
             return PartialView("ContactForm", new ContactForm());
         }
+
+        [HttpPost]
+        public ActionResult HandleFormSubmit(ContactForm model)
+        {
+            if (!ModelState.IsValid) { return CurrentUmbracoPage(); }
+
+            IContent comment = Services.ContentService.CreateContent(model.Subject, CurrentPage.Id, "Comment");
+            comment.SetValue("sender", model.Sender);
+            comment.SetValue("email", model.Email);
+            comment.SetValue("subject", model.Subject);
+            comment.SetValue("message", model.Message);
+
+            Services.ContentService.SaveAndPublishWithStatus(comment);
+
+            return RedirectToCurrentUmbracoPage();
+        }
         
     }
 }

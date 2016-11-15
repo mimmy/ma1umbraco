@@ -1,27 +1,33 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-	
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.MessageBoard>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
 }
+	
 <div class="container">
 	<div class="row">
+		<h1>Message Board</h1>
+		<div class="col-lg-6">
+			@Html.Action("Index", "BoardMessageSorface")
+		</div>
+			</div>
+			<div class="row">
 		<div class="col-lg-12">
-			<div class="panel panel-default">
-@Umbraco.RenderMacro("FormsRenderForm", new {FormGuid="53ab2791-44ba-401f-b53e-fd5da42f96ee"})
+			<h2>All messages:</h2>
+			@{
 
-	@{
-
-	var messageList = Umbraco.Content(1102);
-		<!--<p>@messageList.Children()</p>-->
+	var messageList = Umbraco.Content(1125);
 	
 	foreach(var msg in messageList.Children().OrderBy("CreateDate desc")) {
-		<p>@msg.Message</p>
-		<p><strong>[@msg.CreateDate] @msg.Name: </strong>@msg.Message</p>
+		
+		<div><p><strong> @msg.sender: </strong></p>
+			<p>@msg.message</p>
+			<p>@msg.CreateDate</p>
+			</div>
 			
 	}
 	
 }
-</div>
 		</div>
 	</div>
 </div>

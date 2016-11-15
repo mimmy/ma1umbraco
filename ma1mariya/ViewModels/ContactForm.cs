@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,14 +8,14 @@ namespace ma1mariya.ViewModels
 {
     public class ContactForm
     {
-       // [Required]
+        [Required]
         public string Sender { get; set; }
-        //[Required]
-        //[EmailAddress(ErrorMessage = "This is not a valid email address")]
+        [Required]
+        [EmailAddress(ErrorMessage = "This is not a valid email address")]
         public string Email { get; set; }
-        //[Required]
+        [Required]
         public string Subject { get; set; }
-        //[Required]
+        [Required]
         public string Message { get; set; }
     }
 }
